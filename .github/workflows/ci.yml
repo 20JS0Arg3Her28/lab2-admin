@@ -1,38 +1,54 @@
 name: Continuous Integration
 
+# TRIGGERS - Cuándo se ejecuta este workflow
 # Se ejecuta en Pull Requests hacia main y en pushes a main
 on:
+  # Se ejecuta cuando se crea o actualiza un Pull Request hacia main
   pull_request:
     branches: [ main ]
+    # Prueba antes de hacer merge
+  # Se ejecuta cuando se hace push directamente a la rama main
   push:
     branches: [ main ]
+    # Verifica que main siempre tenga código funcional
 
+# JOBS - Trabajos que se ejecutarán
 jobs:
+  # Ejecutar todas las pruebas
   test:
+  # Sistema operativo donde se ejecutará
     runs-on: ubuntu-latest
     
+    # STRATEGY MATRIX - Probar en múltiples versiones de Python
     strategy:
+      # Matrix de versiones de Python a probar
       matrix:
         python-version: [3.8, 3.9, '3.10', '3.11']
     
+     # Descargar código del repositorio
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
     
+    # Configuracion Python
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
       with:
+        # Instalacion versión específica de Python de la matrix
         python-version: ${{ matrix.python-version }}
     
+    # Instalacion dependencias
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
+     # Ejecutar pruebas específicas de math_utils
     - name: Run tests for math_utils
       run: |
         python -m unittest test_math_utils.py -v
         
+     # Ejecutar todas las pruebas (discovery automático)
     - name: Run all tests with coverage (optional)
       run: |
         python -m unittest discover -s . -p "test_*.py" -v
