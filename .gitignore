@@ -1,0 +1,8 @@
+*.save# En .gitignore
+__pycache__/
+*.pyc
+
+.gitignore.save
+# Pero SI quiero incluir un archivo específico:
+!archivo_especial.pyc
+!carpeta_importante/
