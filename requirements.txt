@@ -1,0 +1,9 @@
+# Dependencias del proyecto
+# Para este proyecto usamos solo la librería estándar de Python
+# No se requieren dependencias externas
+
+# Si quisieras agregar pytest en lugar de unittest:
+# pytest>=7.0.0
+
+# Si quisieras agregar coverage para medir cobertura de tests:
+# coverage>=6.0.0
