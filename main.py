@@ -2,6 +2,8 @@
 """
 Demostración de todas las funciones implementadas
 Este script muestra ejemplos de uso de las tres librerías
+
+python3 -m unittest test_math_utils.py -v
 """
 
 from math_utils import square, factorial, is_prime, gcd, lcm
@@ -59,14 +61,14 @@ def demo_error_handling():
             print(f"{description} → {type(e).__name__}: {e}")
 
 if __name__ == '__main__':
-    print("🚀 DEMOSTRACIÓN COMPLETA DEL LABORATORIO CI")
+    print("DEMOSTRACIÓN COMPLETA DEL LABORATORIO CI")
     print("=" * 70)
     
     demo_math_utils()
     demo_error_handling()
     
     print(f"\n{'='*70}")
-    print("✨ ¡DEMOSTRACIÓN COMPLETADA! ✨")
+    print("¡DEMOSTRACIÓN COMPLETADA!")
     print("Todas las funciones están funcionando correctamente.")
     print("Ejecuta 'python run_tests.py' para verificar las pruebas unitarias.")
     print("="*70)
