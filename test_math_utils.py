@@ -9,7 +9,7 @@ class TestMathUtils(unittest.TestCase):
     
     def test_square_happy_path(self):
         """Pruebas exitosas para square"""
-        self.assertEqual("test")
+        self.assertEqual(square(5), 25)
         self.assertEqual(square(-3), 9)
         self.assertEqual(square(0), 0)
         self.assertEqual(square(2.5), 6.25)
