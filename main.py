@@ -12,8 +12,8 @@ def demo_math_utils():
     print("=" * 50)
     
     # Square
-    # print(f"square(5) = {square(5)}")
-    print(f"square(5) = {square("test")}")
+    print(f"square(5) = {square(5)}")
+    # print(f"square(5) = {square("test")}")
     print(f"square(-3) = {square(-3)}")
     print(f"square(2.5) = {square(2.5)}")
     
