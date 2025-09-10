@@ -20,7 +20,7 @@ def square(n):
     """
     if not isinstance(n, (int, float)):
         raise TypeError("El parámetro debe ser un número")
-    return n * n
+    return n * 2
 
 def factorial(n):
     """
